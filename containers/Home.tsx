@@ -12,9 +12,24 @@ export const Home : NextPage<AccessTokenProps> = ({setAccessToken}) => {
 
     const [tasks, setTasks] = useState<Task[]>([]);
 
+    const [previsionDateStart, setPrevisionDateStart] = useState("");
+    const [previsionDateEnd, setPrevisionDateEnd] = useState("");
+    const [status, setStatus] = useState("0");
+
     const getFilteredList = async() =>{
         try{
-            const result = await executeRequest('task', 'GET');
+            let query = "?status=" + status;
+
+            if (previsionDateStart) {
+                query += "&previsionDateStart" + previsionDateStart;
+            }
+
+            
+            if (previsionDateEnd) {
+                query += "&previsionDateEnd" + previsionDateEnd;
+            }
+
+            const result = await executeRequest('task' + query, 'GET');
             if(result && result.data){
                 setTasks(result.data);
             }
@@ -25,7 +40,7 @@ export const Home : NextPage<AccessTokenProps> = ({setAccessToken}) => {
 
     useEffect(() =>{
         getFilteredList();
-    }, []);
+    }, [previsionDateStart, previsionDateEnd, status]);
 
     const sair = () =>{
         localStorage.removeItem('accessToken');
@@ -37,7 +52,14 @@ export const Home : NextPage<AccessTokenProps> = ({setAccessToken}) => {
     return (
         <>
             <Header sair={sair}/>
-            <Filter/>
+            <Filter 
+            periodoDe={previsionDateStart}
+            setPeriodoDe={setPrevisionDateStart}
+            periodoAte={previsionDateEnd}
+            setPeriodoAte={setPrevisionDateEnd}
+            status={status}
+            setstatus={setStatus}
+            />
             <List tasks={tasks} getFilteredList={getFilteredList} />
             <Footer />
         </>
