@@ -22,7 +22,7 @@ export const Item:NextPage<ItemProps> = ({task, selectTaskToEdit}) => {
     return (
         <div className={"container-item"+ (task.finishDate? "" : " ativo")}
             onClick={_ => task.finishDate ? null : selectTaskToEdit(task)}>
-            <img className='img' src={task.finishDate? '/icons/checked.svg' : '/icons//not-checked.svg'}
+            <img className='img' src={task.finishDate? '/icons/checked.svg' : '/icons/not-checked.svg'}
                 alt={task.finishDate? 'Atividade Concluída' : 'Atividade Ativa'}/>
             <div>
                 <p className={task.finishDate? "concluido" : ""}>{task.name}</p>

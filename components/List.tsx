@@ -70,7 +70,7 @@ export const List: NextPage<ListProps> = ({tasks, getFilteredList}) => {
                 tasks &&tasks.length > 0 ? 
                     tasks.map(t => <Item key={t._id} task={t} selectTaskToEdit={selectToEdit} /> )
                 : <>
-                    <img src="not-found.svg" alt="Nenhuma atividade encontrada"/>
+                    <img src="./icons/not-found.svg" alt="Nenhuma atividade encontrada"/>
                     <p>Você ainda não possui tarefas cadastradas!</p>
                 </>
             }

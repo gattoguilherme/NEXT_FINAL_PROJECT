@@ -21,7 +21,7 @@ export const Filter: NextPage<FilterProps> = ({
         <div className='container-filtros'>
             <div className='title'>
                 <span>Tarefas</span>
-                <img src='/filter.svg' alt='Filtrar Tarefas' onClick={e => setShowFilters(!showFilters)}/>
+                <img src='./icons/filter.svg' alt='Filtrar Tarefas' onClick={e => setShowFilters(!showFilters)}/>
                 <div className='form'>
                     <div>
                         <label>Data prevista de conclusão:</label>

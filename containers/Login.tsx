@@ -18,9 +18,9 @@ export const Login:NextPage<AccessTokenProps> = ({setAccessToken}) => {
                 return setError('Favor Informar usuário e senha');
             }
 
-            console.log('teste1');
             const body = {login, password};
             const result = await executeRequest('login', 'POST', body);
+
             if(!result && !result.data){
                 return setError('Ocorreu um ao processar login.');
             }

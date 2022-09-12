@@ -14,15 +14,15 @@ export const Header: NextPage<HeaderProps> = ({sair, setShowModal}) => {
 
     return (
         <div className="container-header">
-            <img src="/icons/logo.svg" alt="Logo Fiap" className="logo"/>
+            <img src="./icons/logo.svg" alt="Logo Fiap" className="logo"/>
             <button onClick={e => setShowModal(true)}><span>+</span>Adicionar Tarefa</button>
             <div className="mobile">
                 <span>Olá {userName}</span>
-                <img src="/icons/exit-mobile.svg" alt="Sair" onClick={sair}/>
+                <img src="./icons/exit-mobile.svg" alt="Sair" onClick={sair}/>
             </div>
             <div className="desktop">
                 <span>Olá {userName}</span>
-                <img src="/icons/exit-desktop.svg" alt="Sair" onClick={sair}/>
+                <img src="./icons/exit-desktop.svg" alt="Sair" onClick={sair}/>
             </div>
         </div>
     );

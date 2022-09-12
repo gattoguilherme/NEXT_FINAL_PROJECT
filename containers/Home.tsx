@@ -24,7 +24,6 @@ export const Home : NextPage<AccessTokenProps> = ({setAccessToken}) => {
 
     const getFilteredList = async() =>{
         try{
-            console.log(status)
             let query = '?status='+status;
 
             if(previsionDateStart){

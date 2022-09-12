@@ -10,7 +10,7 @@ type FooterProps = {
 export const Footer: NextPage<FooterProps> = ({setShowModal}) => {
     return (
         <div className='container-footer'>
-                <button onClick={e => setShowModal(true)}><img src='/add.svg' alt='Adicionar tarefa'/> Adicionar Tarefa</button>
+                <button onClick={e => setShowModal(true)}><img src='./icons/add.svg' alt='Adicionar tarefa'/> Adicionar Tarefa</button>
                 <span>© Copyright {new Date().getFullYear()}. Todos os direitos reservados.</span>
         </div>
     );
