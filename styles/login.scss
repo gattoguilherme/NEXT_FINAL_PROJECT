@@ -64,6 +64,14 @@
         }
     }
 
+    .register-button {
+        color: $primaryColor;
+        background: white;
+        border: 2px solid $primaryColor;
+    }
+
+
+
     button {
         width: 100%;
         height: 56px;
@@ -72,7 +80,7 @@
         color: white;
         border-radius: 12px;
         font-size: 16px;
-        margin-top: 30px;
+        margin-top: 10px;
     }
 
     @media screen and (min-width:1024px) {
@@ -109,4 +117,10 @@
             }
         }
     }
+}
+
+.forget-password {
+    font-size: small;
+    color: $primaryColor;
+    text-align:right;
 }
